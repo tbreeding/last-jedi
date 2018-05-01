@@ -1,0 +1,19 @@
+{
+  "name": "last-jedi",
+  "version": "1.0.0",
+  "description": "Volume in drive C has no label.\r  Volume Serial Number is 28C7-DB42",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbreeding/last-jedi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbreeding/last-jedi/issues"
+  },
+  "homepage": "https://github.com/tbreeding/last-jedi#readme"
+}
