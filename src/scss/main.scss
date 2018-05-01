@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+$gray: #666666;
+$lightgray: #E0E0E0;
+$white: white;
+$mainFont: Arial;
+
+$welcomePicture: "../img/welcome.jpg";
+$charBackground: "../img/rey-standing.jpg";
+$galleryBackground: "../img/gallery.jpg";
+
+@mixin imgSize($n) {
+    height: $n * 150px;
+}
+@mixin barHeight($h) {
+    height: $h * 200px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $lightgray;
+}
+.container {
+    width: 800px;
+    background-color: #E7E7E7;
+}
+section {
+    margin: 0 0 10px 0;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $gray;
+    color: $white;
+    display: flex;
+    font-size: 1.5rem;
+    padding: 0;
+    height: 50px;
+}
+.navItem {
+    margin: 0;
+    padding: 0 20px;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .2s;
+    &:hover {
+        background-color: $gray - #111111;
+    }    
+}
+.jumbotron {
+    padding: 80px;
+    height: 350px;
+    background: url($welcomePicture) center center/cover no-repeat scroll;
+
+    h1 {
+        color: $lightgray;
+    }
+    div {
+        text-align: center;
+    }
+    h2 {
+        font-weight: 300;  
+        color: $gray; 
+    }
+}
+.plotContainer {
+    display: flex;
+    width: 90%;
+    margin: 20px;
+    .plotDescription {
+        margin: 10px;
+        padding: 10px;
+    }
+}
+.characters {
+    background: url($charBackground) center center/cover no-repeat scroll;
+}
+.charImages {
+    display: flex;
+    align-items: center;
+    margin-top: 210px;
+}
+.charImg {
+    border-radius: 50%;
+    margin: 0 3px;
+}
+.imgSmallest {
+    @include imgSize(.5);
+}
+.imgSmall {
+    @include imgSize(.62);
+}
+.imgMed {
+    @include imgSize(.75);
+}
+.imgCenter {
+    @include imgSize(1);
+}
+#imdb {
+    @include barHeight(.75);
+}
+#rottentomatoes {
+    @include barHeight(.9);
+}
+#metacritic {
+    @include barHeight(.8);
+}
+.chart {
+    display: flex;
+    width: 70%;
+    align-items: flex-end;
+    justify-content: space-around;
+    .chartBarContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        p {
+            margin: 4px;
+        }
+        .chartBar {
+            background-color: #A7A7A7;
+            width: 150px;
+        }
+    }
+}
+.spotlight {
+    display: flex;
+    width: 80%;
+    img {
+        height: 250px;
+    }
+    .spotlightDescription {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 30px;
+        h3, p {
+            margin: 5px
+        }
+        p {
+            font-size: .9rem;
+        }
+    }
+}
+.remainingCast {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 15px;
+    .castPhoto {
+        height: 140px;
+        width: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0;
+        .castName {
+            margin: 0;
+            padding: 2px 0;
+            width: 100%;
+            background-color: rgba(50,50,50,.4);
+            color: white;
+            font-size: .9rem;
+            text-align: center;
+        }
+    }
+    #cFisher {
+        background: url("../img/fisher.jpg") center center/cover no-repeat scroll;
+    }
+    #aDriver {
+        background: url("../img/driver.jpg") center center/cover no-repeat scroll;
+    }
+    #dRidley {
+        background: url("../img/ridley.jpg") center center/cover no-repeat scroll;
+    }
+    #jBoyega {
+        background: url("../img/boyega.jpg") center center/cover no-repeat scroll;
+    }
+    #oIsaac {
+        background: url("../img/isaac.jpg") center center/cover no-repeat scroll;
+    }
+    #aSerkis {
+        background: url("../img/serkis.jpg") center center/cover no-repeat scroll;
+    }
+}
+.slideShow {
+    height: 375px;
+    width: 100%;
+    background: url($galleryBackground) center center/cover no-repeat scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    font-size: 3em;
+    margin-top: 20px;
+    i {
+        cursor: pointer;
+        opacity: .8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
